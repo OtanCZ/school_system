@@ -2,9 +2,12 @@ package com.src.schoolsystem.logic;
 
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        Student student = new Student("džou bajdn");
+        StudentRepository studentRepository = new FileStudentRepository();
+        System.out.println(studentRepository.readStudent());
+
+      /*  Student student = new Student("džou bajdn");
         student.addGrade(Subjects.CZECH, 3);
         student.addGrade(Subjects.CZECH, 5);
         student.addGrade(Subjects.CZECH, 3);
@@ -38,6 +41,6 @@ public class Application {
         ClassRoom classroom2 = new ClassRoom("3. Bi");
         student3.calculateAverageOfStudent();
         classroom2.getAverageOfClass();
-        classroom2.getAverageOfClassForEachSubject();
+        classroom2.getAverageOfClassForEachSubject();*/
     }
 }
