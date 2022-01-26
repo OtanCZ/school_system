@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.src.schoolsystem.CreateStudentView">
+   <children>
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="553.0" layoutY="361.0" mnemonicParsing="false" text="OK" />
+      <Label layoutX="55.0" layoutY="14.0" text="Jméno:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField layoutX="118.0" layoutY="17.0" prefHeight="25.0" prefWidth="465.0" />
+      <Label layoutX="55.0" layoutY="88.0" text="Třída:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
