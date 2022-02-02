@@ -3,15 +3,16 @@ package com.src.schoolsystem.logic;
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class FileStudentRepository implements StudentRepository {
 
-    private static final String FILE_NAME = "./students.csv";
+    private static final String FILE_NAME = "src/main/students.csv";
 
     @Override
     public List<Student> readStudent() throws FileNotFoundException {
-        Scanner scanner = new Scanner(new FileInputStream(FILE_NAME));
+       Scanner scanner = new Scanner(new FileInputStream(FILE_NAME));
         List<Student> students = new LinkedList<>();
         while(scanner.hasNextLine()) {
             String line = scanner.nextLine();
@@ -48,9 +49,23 @@ public class FileStudentRepository implements StudentRepository {
     }
 
     private String generateString(List<Student> students) {
+        String totalString = "";
         for (int i = 0; i < students.size(); i++) {
+            Student student = students.get(i);
+            // "zak1";CZECH;1;ENGLISH;2;CZECH;1;MATH;5;
+            String row = "\"" + student.getName() + "\";";
+            for (Map.Entry<Subjects, List<Integer>> entry : student.getGrades().entrySet()) {
+                for(Integer grade : entry.getValue()) {
+                    String row2 = "" + entry.getKey() +";" +grade + ";";
+                    row += row2;
+                    //System.out.println("" + entry.getKey() +";" +grade);
+                }
+            }
+            totalString += row + "\n";
+           // System.out.println(totalString);
+
 
         }
-        return null;
+        return totalString;
     }
 }

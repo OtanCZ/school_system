@@ -1,13 +1,17 @@
 package com.src.schoolsystem.logic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Application {
 
     public static void main(String[] args) throws Exception {
 
         StudentRepository studentRepository = new FileStudentRepository();
         System.out.println(studentRepository.readStudent());
+        List<Student> students = new ArrayList<>();
 
-      /*  Student student = new Student("džou bajdn");
+        Student student = new Student("džou bajdn");
         student.addGrade(Subjects.CZECH, 3);
         student.addGrade(Subjects.CZECH, 5);
         student.addGrade(Subjects.CZECH, 3);
@@ -27,7 +31,13 @@ public class Application {
         student2.calculateAverageOfStudent();
         System.out.println();
 
+        students.add(student);
+        students.add(student2);
 
+        System.out.println(students);
+        studentRepository.writeStudents(students);
+
+/*
         ClassRoom classroom = new ClassRoom("1. Bi");
         classroom.addStudent(student);
         classroom.addStudent(student2);
@@ -42,5 +52,6 @@ public class Application {
         student3.calculateAverageOfStudent();
         classroom2.getAverageOfClass();
         classroom2.getAverageOfClassForEachSubject();*/
+
     }
 }
